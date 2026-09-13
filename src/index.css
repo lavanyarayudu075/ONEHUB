@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   font-family: Inter, system-ui, sans-serif;
@@ -16,4 +17,24 @@ body {
   margin: 0;
   min-width: 320px;
   background: #f8fafc;
+  transition: background-color 0.5s ease;
+}
+
+.dark body {
+  background: #020617;
+}
+
+@keyframes onehub-float-slow {
+  0%, 100% { transform: translate(-50%, -50%) translate(0, 0) scale(1); }
+  50% { transform: translate(-50%, -50%) translate(20px, -25px) scale(1.06); }
+}
+@keyframes onehub-float-slower {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-15px, 20px) scale(1.08); }
+}
+.animate-float-slow {
+  animation: onehub-float-slow 10s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: onehub-float-slower 14s ease-in-out infinite;
 }
