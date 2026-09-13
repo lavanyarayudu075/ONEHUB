@@ -2,8 +2,7 @@ import { Mail, Sparkles, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const API_BASE = "http://localhost:5000/api/auth";
-
+const API_BASE =`${import.meta.env.VITE_API_URL || "http://localhost:5000/api"}/auth`;
 function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | sent | error

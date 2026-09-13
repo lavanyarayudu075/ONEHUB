@@ -2,7 +2,7 @@ import { Eye, EyeOff, LockKeyhole, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const API_BASE = "http://localhost:5000/api/auth";
+const API_BASE = `${import.meta.env.VITE_API_URL || "http://localhost:5000/api"}/auth`;
 
 function ResetPassword() {
   const { token } = useParams();
