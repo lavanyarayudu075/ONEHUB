@@ -10,7 +10,7 @@ import {
   readRowsFromExcelFile,
   downloadExcelTemplate,
 } from "../utils/DataImport/excelSource";
-import { mapRowsToFields, findMissingColumns } from "../utils/dataImport/mapRows";
+import { mapRowsToFields, findMissingColumns } from "../utils/DataImport/mapRows";
 
 // Generic "Import from Excel" modal, reused by Members / Departments / Tasks.
 //
