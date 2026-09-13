@@ -1,12 +1,13 @@
 const { Pool } = require("pg");
 require("dotenv").config();
 
+// Neon (and most hosted Postgres providers) require an SSL connection.
+// Using a single connection string instead of separate host/port/user/
+// password fields also means there's only one value to copy correctly
+// from Neon's dashboard into .env, rather than five.
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
 });
 
 pool.on("connect", () => {
